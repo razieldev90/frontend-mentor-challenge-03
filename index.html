@@ -21,20 +21,24 @@
     </div>
     <img src="./images/hero-mobile.jpg" alt="hero mobile" class="hero-mobile">
 
-    <div>
+    <div class="box">
 
       <h1><span>We're</span>coming<br> soon</h1>
       
       <p>Hello fellow shoppers! We're currently building our new fashion store.
         Add your email below to stay up-to-date with announcements and our launch deals.</p>
         
-      <form action=".">
-        <input type="email" placeholder="Email Address">
+      <form id="form" novalidate>
+        <input id="email" name="email" type="email" placeholder="Email Address">
         <span class="icon-error"><img src="./images/icon-error.svg" alt=""></span>
-        <input type="submit" value="">
+        <input id="submit" name="submit" type="submit" value="">
       </form>
+      <div class="msg"></div>
     </div>
   </main>
-</body>
 
+
+  <script src="./js/script.js"></script>
+
+</body>
 </html>
