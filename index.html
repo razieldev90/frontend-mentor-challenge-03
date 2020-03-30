@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./css/style.css">
   <title>Frontend Mentor | Base Apparel coming soon page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
 
-  We're coming soon
 
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
+  <img src="./images/hero-desktop.jpg" alt="hero desktop" class="hero-desktop">
+  <main>
+    <div class="logo">
+      <img src="./images/logo.svg" alt="logo">
+    </div>
+    <img src="./images/hero-mobile.jpg" alt="hero mobile" class="hero-mobile">
 
-  Email Address
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">RazielDev</a>.
-    </p>
-  </footer>
+    <div>
+
+      <h1><span>We're</span>coming<br> soon</h1>
+      
+      <p>Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch deals.</p>
+        
+      <form action=".">
+        <input type="email" placeholder="Email Address">
+        <span class="icon-error"><img src="./images/icon-error.svg" alt=""></span>
+        <input type="submit" value="">
+      </form>
+    </div>
+  </main>
 </body>
+
 </html>

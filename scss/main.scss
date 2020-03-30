@@ -10,7 +10,7 @@ $soft-red: hsl(0,93%, 68%);
 $dark-grayish-red: hsl(0, 6%, 24%);
 $gradient1: 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
 $gradient2: 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
-
+$col: hsl(354, 23%, 83%);
 
 *,
 *::before,
@@ -25,4 +25,173 @@ html{
 body{
   font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient($gradient1);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  
+  @media(min-width: 1100px){
+    flex-direction: row;
+    background-image: url('../images/bg-pattern-desktop.svg'), linear-gradient($gradient1);
+    background-position: center right;
+    background-size: cover;
+  }
+}
+
+.logo{
+  padding: 1.5rem 1rem;
+  transform: scale(0.7);
+  margin: 0;
+  align-self: flex-start;
+
+  @media(min-width: 1100px){
+    transform: scale(1);
+    padding: 3.5rem 0;
+    align-self: center;
+  }
+}
+
+.hero{
+  
+  &-desktop{
+
+    display: none;
+    @media(min-width: 1100px){
+      display: block;
+      flex: 40%;
+      order: 1;
+      object-fit: cover;
+    }
+  }
+  
+  &-mobile{
+    width: 100%;
+
+    @media(min-width: 1100px){
+      display: none;
+    }
+  }
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: linear-gradient($gradient1);
+  
+  @media(min-width: 1100px){
+    background: transparent;
+    align-items: center;
+    text-align: left;
+    flex: 60%;
+  }
+
+  div{
+    @media(min-width: 1100px){
+      margin-top: 5rem;
+      width: 50%;
+    }
+  }
+
+  h1{
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    color: $dark-grayish-red;
+
+    @media(min-width: 1100px){
+      font-size: 4rem;
+      letter-spacing: 20px;
+    }  
+
+    span{
+      display: block;
+      font-weight: 300;
+      color: $desaturated-red;
+    }
+  }
+
+  p{
+    line-height: 1.5;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: $desaturated-red;
+    padding: 0 2rem;
+
+    @media(min-width: 1100px){
+      font-size: 1.15rem;
+      padding: 0;
+      margin: 2.5rem 0;
+    }  
+  }
+  
+  form{
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: 0 2rem;
+    padding-bottom: 3rem;
+
+    @media(min-width: 1100px){
+      padding: 0;
+    }  
+
+    .icon-error{
+      position: absolute;
+      right: 7.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: none;
+
+      &.active{
+        display: block;
+      }
+    }
+
+    input{
+      &[type='email']{
+        // background: hsl(0, 100%, 98%);
+        background: transparent;
+        border: 1px solid $col;
+        border-radius: 2rem;
+        padding: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+        flex: 100%;
+        font-family: 'Josefin Sans', sans-serif;;
+
+
+        @media(min-width: 1100px){
+          padding: 0;
+          padding: 1.5rem;
+        }
+
+        &::placeholder{
+          opacity: 0.5;
+          color: $desaturated-red;
+        }
+      }
+  
+      &[type='submit']{
+        background: url('../images/icon-arrow.svg'), linear-gradient($gradient2);
+        background-repeat: no-repeat;
+        background-position: center center;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        position: absolute;
+        right: 2rem;
+        cursor: pointer;
+        box-shadow: 0 5px 15px  rgba($desaturated-red, 0.5);
+
+        @media(min-width: 1100px){
+          right: 0;
+          padding: 1.5rem 3.5rem;
+        }  
+      }
+    }
+  }
 }
